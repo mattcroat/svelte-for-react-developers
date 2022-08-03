@@ -7,18 +7,15 @@ const todos = [
 
 export function Todos() {
 	return (
-		<>
-			<h2>Logic</h2>
-			<ul>
-				{todos.map((todo) => (
-					<li
-						key={todo.id}
-						style={{ textDecoration: todo.completed ? 'line-through' : '' }}
-					>
-						{todo.completed ? `${todo.text} 🎉` : todo.text}
-					</li>
-				))}
-			</ul>
-		</>
+		<ul>
+			{todos.map((todo) => (
+				<li
+					key={todo.id}
+					style={{ textDecoration: todo.completed ? 'line-through' : '' }}
+				>
+					{todo.completed ? `${todo.text} 🎉` : todo.text}
+				</li>
+			))}
+		</ul>
 	)
 }

@@ -59,13 +59,10 @@ function RemoveItem() {
 
 export function Composition() {
 	return (
-		<>
-			<h2>Composition</h2>
-			<List listItems={[1, 2, 3, 4]}>
-				<Items />
-				<AddItem />
-				<RemoveItem />
-			</List>
-		</>
+		<List listItems={[1, 2, 3, 4]}>
+			<Items />
+			<AddItem />
+			<RemoveItem />
+		</List>
 	)
 }

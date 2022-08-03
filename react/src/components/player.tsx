@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import video from '../assets/video.mp4'
+import ein from '../assets/video.mp4'
 
 type Status = 'paused' | 'playing'
 
@@ -7,18 +7,26 @@ export function Player() {
 	const [status, setStatus] = useState<Status>('paused')
 	const videoEl = useRef<HTMLVideoElement>(null)
 
+	function play() {
+		videoEl.current?.play()
+	}
+
+	function pause() {
+		videoEl.current?.pause()
+	}
+
 	useEffect(() => {
-		status === 'playing' ? videoEl.current?.play() : videoEl.current?.pause()
+		status === 'paused' ? pause() : play()
 	}, [status])
 
 	function handleClick() {
-		setStatus((status) => (status === 'paused' ? 'playing' : 'paused'))
+		setStatus(status === 'paused' ? 'playing' : 'paused')
 	}
 
 	return (
 		<>
-			<h2>Effects</h2>
-			<video ref={videoEl} src={video} loop></video>
+			<video ref={videoEl} src={ein} loop></video>
+
 			<button onClick={handleClick}>
 				{status === 'paused' ? 'Play' : 'Pause'}
 			</button>
