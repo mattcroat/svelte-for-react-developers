@@ -4,7 +4,7 @@ import { Grid } from './components/grid'
 import { Todos } from './components/todos'
 import { Form } from './components/form'
 import { Player } from './components/player'
-import { Context } from './components/context'
+import { Composition } from './components/composition'
 
 export default function App() {
 	return (
@@ -20,7 +20,7 @@ export default function App() {
 			<Todos />
 			<Form />
 			<Player />
-			<Context />
+			<Composition />
 		</>
 	)
 }
