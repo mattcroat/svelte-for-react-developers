@@ -33,13 +33,41 @@
 				border: none;
 			}
 
+			form {
+				display: flex;
+				gap: 0.4rem;
+			}
+
 			button {
+				padding: 0.4rem 0.6rem;
 				font: inherit;
+				border: none;
+				border-radius: 8px;
+			}
+
+			button:hover {
+				cursor: pointer;
+			}
+
+			input {
+				padding: 0.6rem;
+				font: inherit;
+				border: none;
+				border-radius: 8px;
 			}
 
 			video {
-				width: 400px;
+				max-width: 400px;
 				display: block;
+				border-radius: 8px;
+			}
+
+			video + button {
+				margin-top: 1rem;
+			}
+
+			ul > button {
+				margin: 1rem 0.4rem 1rem 0;
 			}
 		</style>
 	</head>
