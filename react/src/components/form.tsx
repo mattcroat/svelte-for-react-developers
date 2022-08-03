@@ -6,6 +6,7 @@ export function Form() {
 	function handleSubmit(event: React.FormEvent) {
 		event.preventDefault()
 		alert(name)
+		setName('')
 	}
 
 	function handleInput(event: React.ChangeEvent) {
@@ -17,7 +18,7 @@ export function Form() {
 		<>
 			<h2>Events</h2>
 			<form onSubmit={handleSubmit}>
-				<input type="text" onChange={handleInput} />
+				<input type="text" onChange={handleInput} value={name} />
 				<button type="submit" disabled={name.length === 0}>
 					Submit
 				</button>
