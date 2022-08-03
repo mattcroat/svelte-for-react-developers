@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte'
+	type AddItem = () => void
 
-	const addItem = getContext('addItem')
+	const addItem: AddItem = getContext('addItem')
 </script>
 
 <button on:click={addItem}>Add</button>

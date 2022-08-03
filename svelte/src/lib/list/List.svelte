@@ -3,15 +3,11 @@
 	import { writable, type Writable } from 'svelte/store'
 	export let listItems: any[]
 
-	type Items = Writable<any[]>
-	type AddItem = () => void
-	type RemoveItem = () => void
-
 	const items = writable(listItems)
 
-	setContext<Items>('items', items)
-	setContext<AddItem>('addItem', addItem)
-	setContext<RemoveItem>('removeItem', removeItem)
+	setContext('items', items)
+	setContext('addItem', addItem)
+	setContext('removeItem', removeItem)
 
 	function addItem() {
 		$items = [...$items, $items.length + 1]

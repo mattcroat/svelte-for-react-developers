@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte'
+	type RemoveItem = () => void
 
-	const removeItem = getContext('removeItem')
+	const removeItem: RemoveItem = getContext('removeItem')
 </script>
 
 <button on:click={removeItem}>Remove</button>

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte'
+	import type { Writable } from 'svelte/store'
 
-	const items = getContext('items')
+	const items: Writable<any[]> = getContext('items')
 </script>
 
 {#each $items as item}
