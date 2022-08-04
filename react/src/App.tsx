@@ -1,11 +1,11 @@
-import { Counter } from './components/counter'
-import { CounterWithProps } from './components/props'
-import { Grid } from './components/grid'
-import { Todos } from './components/todos'
-import { Form } from './components/form'
-import { Player } from './components/player'
+import { Counter } from './components/Counter'
+import { CounterWithProps } from './components/Props'
+import { Grid } from './components/Grid'
+import { Todos } from './components/Todos'
+import { Form } from './components/Form'
+import { Player } from './components/Player'
+import { Reactivity } from './components/Reactivity'
 import { Composition } from './components/list'
-// import { Composition } from './components/composition'
 
 export default function App() {
 	return (
@@ -35,6 +35,9 @@ export default function App() {
 
 			<h2>Composition</h2>
 			<Composition />
+
+			<h2>Reactivity</h2>
+			<Reactivity />
 		</>
 	)
 }
