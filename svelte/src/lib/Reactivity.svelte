@@ -51,9 +51,9 @@
 	/>
 
 	{#each filteredTodos as { id, text, completed } (id)}
-		<div class="todo" class:completed>
+		<div class="todo">
 			<input type="checkbox" bind:checked={completed} />
-			<label for="todo">{text}</label>
+			<label class:completed for="todo">{text}</label>
 			<button on:click={() => removeTodo(id)}>❌</button>
 		</div>
 	{/each}
