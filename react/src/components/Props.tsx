@@ -8,7 +8,9 @@ export function CounterWithProps(props: Props) {
 	return (
 		<>
 			<p>{count}</p>
-			<button onClick={() => setCount(count + 1)}>Click</button>
+			<button onClick={() => setCount(count + 1)}>
+				Click
+			</button>
 		</>
 	)
 }

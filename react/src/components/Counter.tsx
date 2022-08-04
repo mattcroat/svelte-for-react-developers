@@ -6,7 +6,9 @@ export function Counter() {
 	return (
 		<>
 			<p style={{ fontWeight: 700 }}>{count}</p>
-			<button onClick={() => setCount(count + 1)}>Click</button>
+			<button onClick={() => setCount(count + 1)}>
+				Click
+			</button>
 		</>
 	)
 }

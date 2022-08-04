@@ -11,12 +11,13 @@ const data = [
 	{ id: 1, text: 'Todo 1', completed: false },
 	{ id: 2, text: 'Todo 2', completed: false },
 	{ id: 3, text: 'Todo 3', completed: false },
-	{ id: 4, text: 'Todo 4', completed: false },
+	{ id: 4, text: 'Todo 4', completed: false }
 ]
 
 export function Reactivity() {
 	const [todos, setTodos] = useState<Todo[]>(data)
-	const [filteredTodos, setFilteredTodos] = useState<Todo[]>(todos)
+	const [filteredTodos, setFilteredTodos] =
+		useState<Todo[]>(todos)
 	const [filter, setFilter] = useState<Filters>('all')
 	const [todo, setTodo] = useState('')
 
@@ -24,9 +25,15 @@ export function Reactivity() {
 		filterTodos()
 	}, [todos, filter])
 
-	function addTodo(event: React.KeyboardEvent, todo: string) {
+	function addTodo(
+		event: React.KeyboardEvent,
+		todo: string
+	) {
 		if (event.key === 'Enter') {
-			setTodos([...todos, { id: Date.now(), text: todo, completed: false }])
+			setTodos([
+				...todos,
+				{ id: Date.now(), text: todo, completed: false }
+			])
 			setTodo('')
 		}
 	}
@@ -51,10 +58,14 @@ export function Reactivity() {
 				setFilteredTodos(todos)
 				return
 			case 'active':
-				setFilteredTodos(todos.filter((todo) => !todo.completed))
+				setFilteredTodos(
+					todos.filter((todo) => !todo.completed)
+				)
 				return
 			case 'completed':
-				setFilteredTodos(todos.filter((todo) => todo.completed))
+				setFilteredTodos(
+					todos.filter((todo) => todo.completed)
+				)
 				return
 		}
 	}
@@ -80,7 +91,11 @@ export function Reactivity() {
 					/>
 					<label
 						htmlFor="todo"
-						style={{ textDecoration: completed ? 'line-through' : '' }}
+						style={{
+							textDecoration: completed
+								? 'line-through'
+								: ''
+						}}
 					>
 						{text}
 					</label>
@@ -89,9 +104,17 @@ export function Reactivity() {
 			))}
 
 			<div className="filters">
-				<button onClick={() => setFilter('all')}>All</button>
-				<button onClick={() => setFilter('active')}>Active</button>
-				<button onClick={() => setFilter('completed')}>Completed</button>
+				<button onClick={() => setFilter('all')}>
+					All
+				</button>
+
+				<button onClick={() => setFilter('active')}>
+					Active
+				</button>
+
+				<button onClick={() => setFilter('completed')}>
+					Completed
+				</button>
 			</div>
 		</div>
 	)

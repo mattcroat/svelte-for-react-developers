@@ -14,11 +14,15 @@ export function List({ children, listItems }: ListProps) {
 	}
 
 	function removeItem() {
-		setListItems((items) => items.slice(0, items.length - 1))
+		setListItems((items) =>
+			items.slice(0, items.length - 1)
+		)
 	}
 
 	return (
-		<ListContext.Provider value={{ items, addItem, removeItem }}>
+		<ListContext.Provider
+			value={{ items, addItem, removeItem }}
+		>
 			<ul>{children}</ul>
 		</ListContext.Provider>
 	)

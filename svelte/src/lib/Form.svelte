@@ -9,5 +9,7 @@
 
 <form on:submit|preventDefault={handleSubmit}>
 	<input type="text" bind:value />
-	<button type="submit" disabled={value.length === 0}>Submit</button>
+	<button type="submit" disabled={value.length === 0}>
+		Submit
+	</button>
 </form>

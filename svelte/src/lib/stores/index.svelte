@@ -17,5 +17,10 @@
 
 <h1>Count: {$count}</h1>
 
-<button on:click={() => dispatch('INCREMENT')}>Increment</button>
-<button on:click={() => dispatch('DECREMENT')}>Decrement</button>
+<button on:click={() => dispatch('INCREMENT')}>
+	Increment
+</button>
+
+<button on:click={() => dispatch('DECREMENT')}>
+	Decrement
+</button>

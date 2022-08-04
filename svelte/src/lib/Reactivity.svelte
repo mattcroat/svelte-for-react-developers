@@ -10,12 +10,15 @@
 		{ id: 1, text: 'Todo 1', completed: false },
 		{ id: 2, text: 'Todo 2', completed: false },
 		{ id: 3, text: 'Todo 3', completed: false },
-		{ id: 4, text: 'Todo 4', completed: false },
+		{ id: 4, text: 'Todo 4', completed: false }
 	]
 
 	function addTodo(event: KeyboardEvent, todo: string) {
 		if (event.key === 'Enter') {
-			todos = [...todos, { id: Date.now(), text: todo, completed: false }]
+			todos = [
+				...todos,
+				{ id: Date.now(), text: todo, completed: false }
+			]
 			todo = ''
 		}
 	}
@@ -60,8 +63,12 @@
 
 	<div class="filters">
 		<button on:click={() => (filter = 'all')}>All</button>
-		<button on:click={() => (filter = 'active')}>Active</button>
-		<button on:click={() => (filter = 'completed')}>Completed</button>
+		<button on:click={() => (filter = 'active')}
+			>Active</button
+		>
+		<button on:click={() => (filter = 'completed')}
+			>Completed</button
+		>
 	</div>
 </div>
 

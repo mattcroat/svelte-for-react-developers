@@ -16,7 +16,11 @@ export function Form() {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input type="text" onChange={handleInput} value={value} />
+			<input
+				type="text"
+				onChange={handleInput}
+				value={value}
+			/>
 			<button type="submit" disabled={value.length === 0}>
 				Submit
 			</button>

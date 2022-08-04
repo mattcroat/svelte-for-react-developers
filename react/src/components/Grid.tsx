@@ -10,7 +10,7 @@ export function Grid({ children, columns }: Props) {
 		<div
 			style={{
 				display: 'grid',
-				gridTemplateColumns: `repeat(${columns}, 1fr)`,
+				gridTemplateColumns: `repeat(${columns}, 1fr)`
 			}}
 		>
 			{children}

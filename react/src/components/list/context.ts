@@ -9,5 +9,5 @@ type ListContext = {
 export const ListContext = createContext<ListContext>({
 	items: [],
 	addItem: () => null,
-	removeItem: () => null,
+	removeItem: () => null
 })
