@@ -16,8 +16,8 @@
 	function addTodo(event: KeyboardEvent, todo: string) {
 		if (event.key === 'Enter') {
 			todos = [...todos, { id: Date.now(), text: todo, completed: false }]
+			todo = ''
 		}
-		todo = ''
 	}
 
 	function removeTodo(id: number) {
