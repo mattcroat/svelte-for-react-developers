@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { useReducer } from './hooks'
 
-	type Action = 'INCREMENT' | 'DECREMENT'
-
-	function countReducer(count: number, action: Action) {
+	function countReducer(count: number, action: any) {
 		switch (action) {
 			case 'INCREMENT':
 				return count + 1
