@@ -9,6 +9,7 @@
 <style>
 	.grid {
 		--columns: 0;
+
 		display: grid;
 		grid-template-columns: repeat(var(--columns), 1fr);
 	}

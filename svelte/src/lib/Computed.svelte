@@ -4,6 +4,7 @@
 		text: string
 		completed: boolean
 	}
+
 	type Filters = 'all' | 'active' | 'completed'
 
 	let todos = [

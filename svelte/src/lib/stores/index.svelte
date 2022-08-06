@@ -1,13 +1,10 @@
 <script lang="ts">
 	import { useReducer } from './hooks'
 
-	type CountType = number
-	type ActionType = 'INCREMENT' | 'DECREMENT'
+	type Count = number
+	type Action = 'INCREMENT' | 'DECREMENT'
 
-	function countReducer(
-		count: CountType,
-		action: ActionType
-	) {
+	function countReducer(count: Count, action: Action) {
 		switch (action) {
 			case 'INCREMENT':
 				return count + 1
@@ -18,10 +15,10 @@
 		}
 	}
 
-	const [count, dispatch] = useReducer<
-		CountType,
-		ActionType
-	>(countReducer, 0)
+	const [count, dispatch] = useReducer<Count, Action>(
+		countReducer,
+		0
+	)
 </script>
 
 <h1>The count is {$count}</h1>

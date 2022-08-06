@@ -5,7 +5,7 @@
 	import Todos from './lib/Todos.svelte'
 	import Form from './lib/Form.svelte'
 	import Player from './lib/Player.svelte'
-	import Reactivity from './lib/Reactivity.svelte'
+	import Computed from './lib/Computed.svelte'
 	import Composition from './lib/list/index.svelte'
 	import Animations from './lib/Animations.svelte'
 	import Stores from './lib/stores/index.svelte'
@@ -34,8 +34,8 @@
 <h2>Effects</h2>
 <Player />
 
-<h2>Reactivity</h2>
-<Reactivity />
+<h2>Computed</h2>
+<Computed />
 
 <h2>Composition</h2>
 <Composition />
