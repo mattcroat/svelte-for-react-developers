@@ -4,7 +4,7 @@ import { Grid } from './components/Grid'
 import { Todos } from './components/Todos'
 import { Form } from './components/Form'
 import { Player } from './components/Player'
-import { Reactivity } from './components/Reactivity'
+import { Computed } from './components/Computed'
 import { Composition } from './components/list'
 
 export default function App() {
@@ -33,11 +33,11 @@ export default function App() {
 			<h2>Effects</h2>
 			<Player />
 
+			<h2>Computed</h2>
+			<Computed />
+
 			<h2>Composition</h2>
 			<Composition />
-
-			<h2>Reactivity</h2>
-			<Reactivity />
 		</>
 	)
 }

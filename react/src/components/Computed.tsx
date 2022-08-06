@@ -1,29 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 type Todo = {
 	id: number
 	text: string
 	completed: boolean
 }
+
 type Filters = 'all' | 'active' | 'completed'
 
-const data = [
-	{ id: 1, text: 'Todo 1', completed: false },
-	{ id: 2, text: 'Todo 2', completed: false },
-	{ id: 3, text: 'Todo 3', completed: false },
-	{ id: 4, text: 'Todo 4', completed: false }
-]
-
-export function Reactivity() {
-	const [todos, setTodos] = useState<Todo[]>(data)
-	const [filteredTodos, setFilteredTodos] =
-		useState<Todo[]>(todos)
-	const [filter, setFilter] = useState<Filters>('all')
+export function Computed() {
+	const [todos, setTodos] = useState<Todo[]>([
+		{ id: 1, text: 'Todo 1', completed: false },
+		{ id: 2, text: 'Todo 2', completed: false },
+		{ id: 3, text: 'Todo 3', completed: false },
+		{ id: 4, text: 'Todo 4', completed: false }
+	])
 	const [todo, setTodo] = useState('')
+	const [filter, setFilter] = useState<Filters>('all')
 
-	useEffect(() => {
-		filterTodos()
-	}, [todos, filter])
+	const filteredTodos = filterTodos(todos, filter)
 
 	function addTodo(
 		event: React.KeyboardEvent,
@@ -52,21 +47,14 @@ export function Reactivity() {
 		setTodos(todos.filter((todo) => todo.id !== id))
 	}
 
-	function filterTodos() {
+	function filterTodos(todos: Todo[], filter: Filters) {
 		switch (filter) {
 			case 'all':
-				setFilteredTodos(todos)
-				return
+				return todos
 			case 'active':
-				setFilteredTodos(
-					todos.filter((todo) => !todo.completed)
-				)
-				return
+				return todos.filter((todo) => !todo.completed)
 			case 'completed':
-				setFilteredTodos(
-					todos.filter((todo) => todo.completed)
-				)
-				return
+				return todos.filter((todo) => todo.completed)
 		}
 	}
 

@@ -7,6 +7,10 @@ export function Player() {
 	const [status, setStatus] = useState<Status>('paused')
 	const videoEl = useRef<HTMLVideoElement>(null)
 
+	useEffect(() => {
+		status === 'paused' ? pause() : play()
+	}, [status])
+
 	function play() {
 		videoEl.current?.play()
 	}
@@ -15,17 +19,13 @@ export function Player() {
 		videoEl.current?.pause()
 	}
 
-	useEffect(() => {
-		status === 'paused' ? pause() : play()
-	}, [status])
-
 	function handleClick() {
 		setStatus(status === 'paused' ? 'playing' : 'paused')
 	}
 
 	return (
 		<>
-			<video ref={videoEl} src={ein} loop></video>
+			<video ref={videoEl} src={ein} loop />
 
 			<button onClick={handleClick}>
 				{status === 'paused' ? 'Play' : 'Pause'}
