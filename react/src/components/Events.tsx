@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function Form() {
+export default function Form() {
 	const [value, setValue] = useState('')
 
 	function handleSubmit(event: React.FormEvent) {

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 type Todo = {
 	id: number
@@ -8,7 +8,7 @@ type Todo = {
 
 type Filters = 'all' | 'active' | 'completed'
 
-export function Computed() {
+export default function FilteredTodos() {
 	const [todos, setTodos] = useState<Todo[]>([
 		{ id: 1, text: 'Todo 1', completed: false },
 		{ id: 2, text: 'Todo 2', completed: false },
@@ -95,11 +95,9 @@ export function Computed() {
 				<button onClick={() => setFilter('all')}>
 					All
 				</button>
-
 				<button onClick={() => setFilter('active')}>
 					Active
 				</button>
-
 				<button onClick={() => setFilter('completed')}>
 					Completed
 				</button>

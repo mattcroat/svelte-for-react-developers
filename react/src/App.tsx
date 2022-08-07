@@ -1,11 +1,11 @@
-import { Counter } from './components/Counter'
-import { CounterWithProps } from './components/Props'
-import { Grid } from './components/Grid'
-import { Todos } from './components/Todos'
-import { Form } from './components/Form'
-import { Player } from './components/Player'
-import { Computed } from './components/Computed'
-import { Composition } from './components/list'
+import Counter from './components/Components'
+import CounterWithProps from './components/Props'
+import Grid from './components/Children'
+import Todos from './components/Logic'
+import Form from './components/Events'
+import VideoPlayer from './components/Synchronization'
+import FilteredTodos from './components/Computed'
+import List from './components/list'
 
 export default function App() {
 	return (
@@ -30,14 +30,14 @@ export default function App() {
 			<h2>Events</h2>
 			<Form />
 
-			<h2>Effects</h2>
-			<Player />
+			<h2>Synchronization</h2>
+			<VideoPlayer />
 
 			<h2>Computed</h2>
-			<Computed />
+			<FilteredTodos />
 
 			<h2>Composition</h2>
-			<Composition />
+			<List />
 		</>
 	)
 }

@@ -5,7 +5,7 @@ type Props = {
 	columns: number
 }
 
-export function Grid({ children, columns }: Props) {
+export default function Grid({ children, columns }: Props) {
 	return (
 		<div
 			style={{

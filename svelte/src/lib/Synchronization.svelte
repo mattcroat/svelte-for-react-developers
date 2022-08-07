@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ein from '../assets/video.mp4'
 
-	let videoEl: HTMLVideoElement
+	let videoEl: HTMLVideoElement = null
 	let status: 'paused' | 'playing' = 'paused'
 
 	function play() {

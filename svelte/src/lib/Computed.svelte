@@ -14,7 +14,7 @@
 		{ id: 4, text: 'Todo 4', completed: false }
 	]
 
-	function addTodo(event: KeyboardEvent, todo: string) {
+	function addTodo(event: KeyboardEvent) {
 		if (event.key === 'Enter') {
 			todos = [
 				...todos,
@@ -46,7 +46,7 @@
 
 <div class="todos">
 	<input
-		on:keypress={(event) => addTodo(event, todo)}
+		on:keypress={addTodo}
 		bind:value={todo}
 		type="text"
 		name="todo"
@@ -64,12 +64,12 @@
 
 	<div class="filters">
 		<button on:click={() => (filter = 'all')}>All</button>
-		<button on:click={() => (filter = 'active')}
-			>Active</button
-		>
-		<button on:click={() => (filter = 'completed')}
-			>Completed</button
-		>
+		<button on:click={() => (filter = 'active')}>
+			Active
+		</button>
+		<button on:click={() => (filter = 'completed')}>
+			Completed
+		</button>
 	</div>
 </div>
 

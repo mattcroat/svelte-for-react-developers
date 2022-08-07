@@ -7,6 +7,7 @@
 		text: string
 		completed: boolean
 	}
+
 	type Filters = 'all' | 'active' | 'completed'
 
 	let todos = [
@@ -16,14 +17,14 @@
 		{ id: 4, text: 'Todo 4', completed: false }
 	]
 
-	function addTodo(event: KeyboardEvent, todo: string) {
+	async function addTodo(event: KeyboardEvent) {
 		if (event.key === 'Enter') {
 			todos = [
 				...todos,
 				{ id: Date.now(), text: todo, completed: false }
 			]
+			todo = ''
 		}
-		todo = ''
 	}
 
 	function removeTodo(id: number) {
@@ -48,24 +49,29 @@
 
 <div class="todos">
 	<input
-		on:keypress={(event) => addTodo(event, todo)}
+		on:keypress={addTodo}
 		bind:value={todo}
-		type="text"
-		name="todo"
 		id="todo"
+		type="text"
 		placeholder="What needs to be done?"
+		name="todo"
 	/>
 
 	{#each filteredTodos as { id, text, completed } (id)}
 		<div
 			class="todo"
+			animate:flip
 			in:fly={{ x: -100 }}
 			out:fly={{ x: 100 }}
-			class:completed
-			animate:flip
 		>
-			<input type="checkbox" bind:checked={completed} />
-			<label for="todo">{text}</label>
+			<input
+				id="completed-{id}"
+				type="checkbox"
+				bind:checked={completed}
+			/>
+			<label class:completed for="completed-{id}">
+				{text}
+			</label>
 			<button on:click={() => removeTodo(id)}>❌</button>
 		</div>
 	{/each}

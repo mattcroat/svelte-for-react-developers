@@ -3,7 +3,7 @@ import ein from '../assets/video.mp4'
 
 type Status = 'paused' | 'playing'
 
-export function Player() {
+export default function Player() {
 	const [status, setStatus] = useState<Status>('paused')
 	const videoEl = useRef<HTMLVideoElement>(null)
 

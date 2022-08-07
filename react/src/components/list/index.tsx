@@ -3,7 +3,7 @@ import { Items } from './Items'
 import { AddItem } from './AddItem'
 import { RemoveItem } from './RemoveItem'
 
-export function Composition() {
+export default function Composition() {
 	return (
 		<List listItems={[1, 2, 3, 4]}>
 			<Items />

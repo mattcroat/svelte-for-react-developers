@@ -5,7 +5,7 @@ const todos = [
 	{ id: 4, text: 'Todo 4', completed: false }
 ]
 
-export function Todos() {
+export default function Todos() {
 	return (
 		<ul>
 			{todos.map((todo) => (
