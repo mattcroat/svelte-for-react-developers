@@ -40,8 +40,8 @@
 <h2>Composition</h2>
 <List />
 
-<h2>Animations</h2>
-<AnimatedTodos />
-
 <h2>Stores</h2>
 <Reducer />
+
+<h2>Animations</h2>
+<AnimatedTodos />
