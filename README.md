@@ -19,9 +19,5 @@ cd svelte && npm i
 💽 Run the development server:
 
 ```sh
-cd react && npm run dev
-```
-
-```sh
-cd svelte && npm run dev
+npm run dev
 ```
