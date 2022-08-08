@@ -64,12 +64,8 @@
 			in:fly={{ x: -100 }}
 			out:fly={{ x: 100 }}
 		>
-			<input
-				id="completed-{id}"
-				type="checkbox"
-				bind:checked={completed}
-			/>
-			<label class:completed for="completed-{id}">
+			<input type="checkbox" bind:checked={completed} />
+			<label class:completed for="completed">
 				{text}
 			</label>
 			<button on:click={() => removeTodo(id)}>❌</button>
